@@ -35,14 +35,14 @@ class MyStocks:
         self.img_label = ctk.CTkLabel(self.content_frame, image=bg_image, text="")
         self.img_label.place(relx=0.5, rely=0.5, anchor=ctk.CENTER)
 
-        self.add_btn=ctk.CTkButton(self.bg_frame,
-                                    text="Add stocks",
+        self.back_btn=ctk.CTkButton(self.bg_frame,
+                                    text="Back to dashboard",
                                     fg_color="orange",
                                     font=("Helvetica",18,"bold"),
                                     width=20,
                                     height=20,
-                                    command=self.add)
-        self.add_btn.place(relx=0.55, rely=0.96, anchor="se")
+                                    command=self.back)
+        self.back_btn.place(relx=0.56, rely=0.96, anchor="se")
 
         # Scrollable Frame for Stocks (Left Side)
         self.mystk_frame = ctk.CTkScrollableFrame(
@@ -122,9 +122,9 @@ class MyStocks:
         self.root.destroy()
         subprocess.Popen([sys.executable,"Stock Market/Main+GUI/AppFunctions/Visualiser.py"])
 
-    def add(self):
+    def back(self):
         self.root.destroy()
-        subprocess.Popen([sys.executable,"Stock Market/Main+GUI/AppFunctions/AddStock.py"])
+        subprocess.Popen([sys.executable,"Stock Market/Main+GUI/Dashboard.py"])
 
     def run(self):
         self.root.mainloop()
