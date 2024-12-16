@@ -146,7 +146,7 @@ class ClientLogin:
         username = self.username_entry.get()
         password = self.password_entry.get()
 
-        with open("TemporaryUserDetails.txt","w") as tempdetails:
+        with open("Stock Market/TemporaryUserDetails.txt","w") as tempdetails:
             tempdetails.write(username+'\n'+password)
 
       
